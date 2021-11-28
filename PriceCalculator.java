@@ -27,6 +27,9 @@ public class PriceCalculator {
 
 	public int calculateTotalPrice(String[] products) {
 		int countA =0, countB =0, countC = 0, countD = 0;
+	        if(products == null) {
+		  return 0;
+		}
 		for (String product : products) {
 			if (product.equals("A")) {
 				countA++;
