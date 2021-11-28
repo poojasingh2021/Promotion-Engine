@@ -2,31 +2,30 @@ package promotionEngine;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
 
 public class PriceCalculator {
 	public static void main(String[] args) {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-			List<String> products = new ArrayList<String>();
+			String[] products = null;
 			int totalProduct = 0;
 			System.out.println("Enter total number of products : ");
 			totalProduct = Integer.parseInt(br.readLine());
+			products = new String[totalProduct];
 			for (int i = 0; i < totalProduct; i++) {
 				System.out.println("Enter the type of product:A,B,C or D : ");
 				String product = br.readLine();
-				products.add(product);
+				products[i] = product;
 			}
 			PriceCalculator priceCal = new PriceCalculator();
-			double totalPrice = priceCal.calculateTotalPrice(products);
+			int totalPrice = priceCal.calculateTotalPrice(products);
 			System.out.println("Total Price is : " + totalPrice);
 		} catch (Exception e) {
 			System.err.println("Error occured");
 		}
 	}
 
-	public double calculateTotalPrice(List<String> products) {
+	public int calculateTotalPrice(String[] products) {
 		int countA =0, countB =0, countC = 0, countD = 0;
 		for (String product : products) {
 			if (product.equals("A")) {

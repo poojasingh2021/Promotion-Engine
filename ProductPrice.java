@@ -4,8 +4,8 @@ package promotionEngine;
  * This class is responsible for getting price according to selected product
  */
 public class ProductPrice {
-	private double getProductPrice(String product) {
-		double price = 0;
+	private int getProductPrice(String product) {
+		int price = 0;
 		switch (product) {
 		case "A":
 			price = 50;
@@ -25,8 +25,8 @@ public class ProductPrice {
 		return price;
 	}
 
-	public double getTotalPriceOfProductA(int count) {
-		double price = 0.0;
+	public int getTotalPriceOfProductA(int count) {
+		int price = 0;
 		try {
 			int ruleCount = count % 3;
 			if (ruleCount == 0) {
@@ -41,8 +41,8 @@ public class ProductPrice {
 		return price;
 	}
 
-	public double getTotalPriceOfProductB(int count) {
-		double price = 0.0;
+	public int getTotalPriceOfProductB(int count) {
+		int price = 0;
 		try {
 			int ruleCount = count % 2;
 			if (ruleCount == 0) {
@@ -58,8 +58,8 @@ public class ProductPrice {
 		return price;
 	}
 
-	public double getTotalPriceOfProductCAndD(int countC,int countD) {
-		double price = 0.0;
+	public int getTotalPriceOfProductCAndD(int countC,int countD) {
+		int price = 0;
 		try {
         if(countC == countD) {
         	price = countC * PromotionsRules.RULE_CANDD.getPromoPrice();

@@ -2,13 +2,13 @@ package promotionEngine;
 
 public enum PromotionsRules {
 	RULE_3AS(130), RULE_2BS(45), RULE_CANDD(30);
-	private double promoPrice = 0;
+	private int promoPrice = 0;
 
 	private PromotionsRules(int rule) {
 		this.promoPrice = rule;
 	}
 
-	public double getPromoPrice() {
+	public int getPromoPrice() {
 		return promoPrice;
 	}
 	
