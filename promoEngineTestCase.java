@@ -13,5 +13,6 @@ public class promoEngineTestCase {
 	        assertEquals(280,obj.calculateTotalPrice(new String[]{"A","A","A","B","B","B","B","B","C","D"}));  
 		assertEquals(80,obj.calculateTotalPrice(new String[]{"A","B","E"})); 
 		assertEquals(0,obj.calculateTotalPrice(null)); 
+		assertEquals(0,obj.calculateTotalPrice(new String[] {"E","F","G"})); 
 	    } 
 }
